@@ -1,0 +1,42 @@
+---
+# Declare the resources that Concourse will continually check and use.
+resources:
+  - name: git
+    icon: github
+    type: git
+    source:
+      uri: https://github.com/arnoutc/payroll
+      branch: master
+  - name: image
+    type: registry-image
+    icon: docker
+    source:
+      repository: ((image-name))
+      username: ((registry-username))
+      password: ((registry-password))
+      tag: latest
+
+jobs:
+
+  # This test job will fetch the source code from GitHub, and execute the test task.
+  - name: unit
+    plan:
+      - get: git
+        version: latest # Just process the latest Git commit, not every commit (this is the default setting)
+        trigger: true # Trigger this job whenever Concourse detects a new Resource version (i.e. a new Git commit)
+      - task: run-unit-tests
+        file: git/ci/concourse/tasks/unit-test.yml
+
+  # This build job will fetch the source code,
+  # then execute a 'build' task which is defined separately in the repository.
+  - name: package
+    plan:
+      - get: git # Concourse is stateless and needs to be given an external input to this Job.
+        passed:
+          - unit # The 'unit' job must have passed for this job to execute
+        trigger: true
+      - task: maven-package
+        file: git/ci/concourse/tasks/maven-package.yml
+      # Take the image built in the previous task, and push it to our Docker registry Resource
+      - put: image
+        params: {image: image/payroll-0.0.1-SNAPSHOT.tar}
