@@ -1,7 +1,7 @@
 # Declare the resource types that Concourse will use.
 resource_types:
   - name: k8s
-    type: kubernetes
+    type: docker-image
     source:
       repository: srinivasavasu/concourse-k8s
 
@@ -22,9 +22,13 @@ resources:
       password: ((registry-password))
       tag: latest
   - name: k8s
-    type: kubernetes
+    type: k8s
     source:
-      kubeconfig: {{k8s_server}}
+      cluster_url: {{k8s_cluster_url}}
+      namespace: {{k8s_namespace}}
+      cluster_ca: {{k8s_ca_base64}}
+      admin_user: {{k8s_admin_user}}
+      admin_token: {{k8s_admin_token}}
 
 # Declare the jobs that Concourse will kick off and use.
 jobs:

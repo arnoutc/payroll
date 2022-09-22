@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Demonstration of Spring boot (true HATEOS) Restful Java web service application
+ * Build again
  */
 @SpringBootApplication
 public class PayrollApplication {
