@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payroll
+  namespace: payroll
+  labels:
+    name: payroll-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payroll
+  template:
+    metadata:
+      labels:
+        app: payroll
+    spec:
+      containers:
+        - name: payroll
+          image: 220779065597.dkr.ecr.eu-west-2.amazonaws.com/payroll:1.0.0
+          imagePullPolicy: Always
+          ports:
+            - name: http-port
+              containerPort: 8080
+          volumeMounts:
+            - name: payroll-vol
+              mountPath: /var/payroll_vol
+      volumes:
+        - name: payroll-vol
+          emptyDir: {}
+      imagePullSecrets:
+        - name: regcred

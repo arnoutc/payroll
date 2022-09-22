@@ -1,7 +1,7 @@
 # Declare the resource types that Concourse will use.
 resource_types:
   - name: k8s
-    type: docker-image
+    type: kubernetes
     source:
       repository: srinivasavasu/concourse-k8s
 

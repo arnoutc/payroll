@@ -1,0 +1,8 @@
+apiVersion: v2
+name: payroll-helm
+version: 1.0.0
+appVersion: 1.0.0
+dependencies:
+  - name: payroll-library-helm
+    version: 1.0.0
+    repository: oci://113355358853.dkr.ecr.eu-west-1.amazonaws.com/payroll
