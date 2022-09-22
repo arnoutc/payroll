@@ -62,7 +62,7 @@
 						<ports>
 							<port>8080</port>
 						</ports>
-						<format>OCI</format>
+						<format>Docker</format>
 					</container>
 					<to>
 						<image>220779065597.dkr.ecr.eu-west-2.amazonaws.com/payroll</image>
