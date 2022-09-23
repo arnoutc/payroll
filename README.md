@@ -10,27 +10,23 @@ Note: :octocat: stands for the GitHub page.
 
 ## Table of Contents
 
-<!-- !toc (minlevel=2 omit="Table of Contents") -->
-
-* [Bringing up the Concourse-CI user interface](#Bringing up the Concourse-CI user interface)
-  * [Prepare a docker-compose.yml](#Prepare a docker-compose.yml)
-  * [Kick off Docker](#Kick off Docker)
-* [Deploying pipeline code](#Deploying pipeline code)
-    * [Install Fly](#Install Fly)
-    * [Login into Concourse-CI ](#Login into Concourse-CI)
-    * [Add JIB to Maven pom.xml](#Add JIB to Maven pom.xml)
-    * [Compile the code and push](#Compile the code and push)
-* [Create the pipeline](#Create the pipeline)
-  * [Create the test task](#Create the test task)
-  * [Create the docker build and package task](#Create the docker build and package task)
-  * [Create the pipeline and use tasks ](#Create the pipeline)
-* [Fire up the pipeline](#Fire up the pipeline)
-* [Install the pipeline](#Install the pipeline)
-* [Destroy the pipeline](#Destroy the pipeline)
-* [Articles used](#Articles used)
-* [Meta](#Meta)
-
-<!-- toc! -->
+- [Bringing up the Concourse-CI user interface](#Bringing up the Concourse-CI user interface)
+  - [Prepare a docker-compose.yml](#Prepare a docker-compose.yml)
+  - [Kick off Docker](#Kick off Docker)
+-[Deploying pipeline code](#Deploying pipeline code)
+    - [Install Fly](#Install Fly)
+    - [Login into Concourse-CI ](#Login into Concourse-CI)
+    - [Add JIB to Maven pom.xml](#Add JIB to Maven pom.xml)
+    - [Compile the code and push](#Compile the code and push)
+- [Create the pipeline](#Create the pipeline)
+  - [Create the test task](#Create the test task)
+  - [Create the docker build and package task](#Create the docker build and package task)
+  - [Create the pipeline and use tasks ](#Create the pipeline)
+- [Fire up the pipeline](#Fire up the pipeline)
+- [Install the pipeline](#Install the pipeline)
+- [Destroy the pipeline](#Destroy the pipeline)
+- [Articles used](#Articles used)
+- [Meta](#Meta)
 
 # Bringing up the Concourse-CI user interface
 
