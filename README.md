@@ -77,15 +77,15 @@ Result: the image is build and pushed to AWS Elastic Container Registry (ECR)
 
 ## Create the test task
 
-ci/concourse/tasks/unit-test.yml
+[unit-test.yml](ci/concourse/tasks/unit-test.yml)
 
 ## Create the docker build and package task
 
-ci/concourse/tasks/maven-package.yml
+[maven-package.yml](ci/concourse/tasks/maven-package.yml)
 
 ## Create the pipeline 
 
-ci/concourse/pipeline.yml
+[pipeline.yml](ci/concourse/pipeline.yml)
 
 # Fire up the pipeline
 
