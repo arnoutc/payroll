@@ -10,7 +10,7 @@ Note: :octocat: stands for the GitHub page.
 
 ## Table of Contents
 
-- [Bringing up the Concourse-CI user interface](#Bringing up the Concourse-CI user interface)
+- [Bringing up the Concourse-CI user interface](#Bringing)
   - [Prepare a docker-compose.yml](#Prepare a docker-compose.yml)
   - [Kick off Docker](#Kick off Docker)
 -[Deploying pipeline code](#Deploying pipeline code)
